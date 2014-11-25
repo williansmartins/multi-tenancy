@@ -1,14 +1,30 @@
-package com.williansmartins.service;
+package com.williansmartins.entity;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.List;
 
-import javax.xml.bind.annotation.XmlRootElement;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 
-@XmlRootElement(name="imovel")
+import com.williansmartins.enums.Fita;
+import com.williansmartins.enums.Tipo;
+
+@Entity(name="imovel")
 public class ImovelEntity implements Serializable {
 
 	private static final long serialVersionUID = 83908783713350043L;
+	
+	@Id @GeneratedValue
+	Integer id;
 	
 	BigDecimal valor;
 	String titulo;
@@ -18,10 +34,14 @@ public class ImovelEntity implements Serializable {
 	int banheiros;
 	int vagas;
 	String cidade;
+	@Column(length = 558)
 	String maps;
 	String endereco;
+	@Column(length = 558)
 	String descricaoCompleta;
+	@Column(length = 213)
 	String descricaoQuadrante;
+	@Column(length = 140)
 	String descricaoCarousel;
 	String fotoGrande;
 	String fotoCarousel;
@@ -32,8 +52,27 @@ public class ImovelEntity implements Serializable {
 	boolean mostrarNaHome;
 	boolean temValor;
 
+	@Enumerated(EnumType.STRING)
+	Tipo tipo;
+	
+	@Enumerated(EnumType.STRING)
+	Fita fita;
+
+	@OneToMany(targetEntity = FotoEntity.class, cascade=CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "imovel_id")
+	List<FotoEntity> fotos;
+
+	
 	public ImovelEntity() {
 		
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public BigDecimal getValor() {
@@ -88,6 +127,14 @@ public class ImovelEntity implements Serializable {
 		return maps;
 	}
 	
+	public Tipo getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(Tipo tipo) {
+		this.tipo = tipo;
+	}
+
 	public void setMaps(String maps) {
 		this.maps = maps;
 	}
@@ -130,6 +177,14 @@ public class ImovelEntity implements Serializable {
 
 	public void setFotoCarousel(String fotoCarousel) {
 		this.fotoCarousel = fotoCarousel;
+	}
+
+	public List<FotoEntity> getFotos() {
+		return fotos;
+	}
+
+	public void setFotos(List<FotoEntity> fotos) {
+		this.fotos = fotos;
 	}
 
 	public boolean isMostrarNoCarousel() {
@@ -180,6 +235,14 @@ public class ImovelEntity implements Serializable {
 		this.fotoQuadrante = fotoQuadrante;
 	}
 
+	public Fita getFita() {
+		return fita;
+	}
+
+	public void setFita(Fita fita) {
+		this.fita = fita;
+	}
+
 	public boolean isTemValor() {
 		return temValor;
 	}
@@ -204,23 +267,4 @@ public class ImovelEntity implements Serializable {
 		this.banheiros = banheiros;
 	}
 
-	@Override
-	public String toString() {
-		return "ImovelEntity [valor=" + valor + ", titulo=" + titulo
-				+ ", metros=" + metros + ", dormitorios=" + dormitorios
-				+ ", suites=" + suites + ", banheiros=" + banheiros
-				+ ", vagas=" + vagas + ", cidade=" + cidade + ", maps=" + maps
-				+ ", endereco=" + endereco + ", descricaoCompleta="
-				+ descricaoCompleta + ", descricaoQuadrante="
-				+ descricaoQuadrante + ", descricaoCarousel="
-				+ descricaoCarousel + ", fotoGrande=" + fotoGrande
-				+ ", fotoCarousel=" + fotoCarousel + ", fotoQuadrante="
-				+ fotoQuadrante + ", recursos=" + recursos
-				+ ", caracteristicas=" + caracteristicas
-				+ ", mostrarNoCarousel=" + mostrarNoCarousel
-				+ ", mostrarNaHome=" + mostrarNaHome + ", temValor=" + temValor
-				+ "]";
-	}
-	
-	
 }

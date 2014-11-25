@@ -14,7 +14,6 @@
 	</repositories>
  
 	<dependencies>
- 
 		<dependency>
 			<groupId>com.sun.jersey</groupId>
 			<artifactId>jersey-server</artifactId>
@@ -25,8 +24,21 @@
 			<artifactId>jersey-json</artifactId>
 			<version>1.8</version>
 		</dependency>
-
- 
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.26</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>4.2.1.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+		</dependency>
 	
   </dependencies>
 </project>

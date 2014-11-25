@@ -1,4 +1,4 @@
-package com.williansmartins.service;
+package com.williansmartins.controller;
  
 import javax.ws.rs.GET;
 import javax.ws.rs.HeaderParam;
@@ -8,20 +8,19 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+
+import com.williansmartins.dao.entity.ImovelDaoImpl;
+import com.williansmartins.entity.ImovelEntity;
  
-@Path("/hello")
-public class Service {
+@Path("/imovel")
+public class Controller {
  
 	@GET
-	@Path("/1")
+	@Path("/todos")
 	@Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
-	public ImovelEntity getMsg(@PathParam("param") String msg) {
- 
-		ImovelEntity o = new ImovelEntity();
-		o.setTitulo("Meu titulo");
-		o.setCidade("cidade");
-		o.setEndereco("Maria das Acácias, 234 - Jd Rosalina - Cotia");
-		
+	public ImovelEntity todos(String msg) {
+		ImovelDaoImpl dao = new ImovelDaoImpl();
+		ImovelEntity o = dao.findById(70);
 		return o;
 	}
 	
