@@ -13,6 +13,16 @@ public enum Tipo {
 		return label;
 	}
 	
+	public static Tipo get(String tipo){
+		Tipo retorno = null;
+		for (Tipo t : Tipo.values()) {
+			if( t.getLabel() == tipo ){
+				retorno = t;
+			}
+		}
+		return retorno;
+	}
+	
 	@Override
     public String toString() {
         return this.getLabel();
