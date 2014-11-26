@@ -52,11 +52,11 @@ public class Controller {
 	@Produces(Constantes.JSON)
 	public Object carousel( @PathParam("param") String param ) {
 		List<ImovelEntity> lista = dao.find( param );
-		if(lista==null){
-			return new Object();
-		}else{
-			return lista;
-		}
+		JSONReturn jsonReturn = new JSONReturn();
+		jsonReturn.setMensagem("mensagem nova");
+		jsonReturn.setDado(lista);
+		jsonReturn.setTipo("sucesso");
+		return jsonReturn;
 	}
 	
 	@GET

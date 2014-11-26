@@ -6,6 +6,10 @@ public class JSONReturn {
 	private String mensagem; //mensagem complementar
 	private Object dado;     //objeto a retornar para a view
 
+	public JSONReturn( ) {
+		super();
+	}
+	
 	public JSONReturn(String tipo, String mensagem, Object dado) {
 		super();
 		this.tipo = tipo;
