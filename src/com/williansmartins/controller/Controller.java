@@ -16,6 +16,7 @@ import com.williansmartins.dao.entity.ImovelDaoImpl;
 import com.williansmartins.entity.ImovelEntity;
 import com.williansmartins.enums.Tipo;
 import com.williansmartins.utils.Constantes;
+import com.williansmartins.vo.JSONReturn;
  
 @Path("/imovel")
 public class Controller {
@@ -29,22 +30,37 @@ public class Controller {
 	@GET
 	@Path("/todos")
 	@Produces(Constantes.JSON)
-	public List<ImovelEntity> todos( ) {
-		return dao.findAll();
+	public Object todos( ) {
+		List<ImovelEntity> lista = dao.findAll();
+		JSONReturn jsonReturn = new JSONReturn();
+		jsonReturn.setMensagem("mensagem nova");
+		jsonReturn.setDado(lista);
+		jsonReturn.setTipo("sucesso");
+		return jsonReturn;
 	}
 	
 	@GET
 	@Path("/quadrantes")
 	@Produces(Constantes.JSON)
-	public List<ImovelEntity> quadrantes( ) {
-		return dao.buscarImoveisQueApresentamNaHome();
+	public Object quadrantes( ) {
+		List<ImovelEntity> lista = dao.buscarImoveisQueApresentamNaHome();
+		JSONReturn jsonReturn = new JSONReturn();
+		jsonReturn.setMensagem("mensagem nova");
+		jsonReturn.setDado(lista);
+		jsonReturn.setTipo("sucesso");
+		return jsonReturn;
 	}
 	
 	@GET
 	@Path("/carousel")
 	@Produces(Constantes.JSON)
-	public List<ImovelEntity> carousel( ) {
-		return dao.findCarousel();
+	public Object carousel( ) {
+		List<ImovelEntity> lista = dao.findCarousel();
+		JSONReturn jsonReturn = new JSONReturn();
+		jsonReturn.setMensagem("mensagem nova");
+		jsonReturn.setDado(lista);
+		jsonReturn.setTipo("sucesso");
+		return jsonReturn;
 	}
 	
 	@GET

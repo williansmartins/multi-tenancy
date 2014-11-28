@@ -1,4 +1,4 @@
-package com.williansmartins.controller;
+package com.williansmartins.vo;
 
 public class JSONReturn {
 

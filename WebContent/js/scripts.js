@@ -46,19 +46,40 @@ $(document).ready( function(){
 	//Bloquear o botao direito do mouse
 	var mensagem = "Não copie, além de imoral é crime!";
 	
-	if (document.layers) {
-		document.captureEvents(Event.MOUSEDOWN);
-		document.onmousedown = clickNS;
-	} else {
-		document.onmouseup = clickNS;
-		document.oncontextmenu = clickIE;
-	}
-	document.oncontextmenu = new Function("return false");
+//	if (document.layers) {
+//		document.captureEvents(Event.MOUSEDOWN);
+//		document.onmousedown = clickNS;
+//	} else {
+//		document.onmouseup = clickNS;
+//		document.oncontextmenu = clickIE;
+//	}
+//	document.oncontextmenu = new Function("return false");
     
 	$('#modal-cliente\\:interesse').val( $('.titulo').html() );
 	$('#modal-cliente\\:imovel_id').val( $('#form-imovel\\:imovel_id_imovel').val() );
 	
 	if($("body").hasClass("home") ){
+		
+		$.ajax({
+			type:"GET",
+			url:"http://localhost:7070/jersey/rest/corretor/busca",
+			async:false,
+			dataType:"json",
+			success: function( response ){
+				if ( response.tipo == "erro" ){
+					alert( "É triste dizer, mas houve um erro:" + response.mensagem );
+				}else if ( response.tipo == "sucesso" ){
+					$(".topo .telefone").valy( response.dado.telefone );
+					$(".topo .email").valy( response.dado.email );
+					
+					$(".corretor .nome").valy( response.dado.nome );
+					$(".corretor .telefone").valy( response.dado.telefone );
+					$(".corretor .celular").valy( response.dado.celular );
+					$(".corretor .email").valy( response.dado.email );
+					
+				}
+			}
+		});
 	    
 		//Permite o clique no quadrante chamando a tela do imovel especifico
 		$(".imovel.quadrante").css( "cursor", "pointer" );
@@ -261,4 +282,38 @@ function validateEmail(email)
 {
     var re = /\S+@\S+\.\S+/;
     return re.test(email);
+}
+
+function imovelController($scope,$http) {
+  	$http.get("http://localhost:7070/jersey/rest/imovel/quadrantes")
+  		.success(function(response) {
+  			$scope.tipo = response.tipo;
+  			$scope.imoveis = response.dado;
+  			$scope.mensagem = response.mensagem;
+
+  			if (response.tipo == "erro"){
+				alert("É uma pena, mas um erro ocorreu... e a única coisa que posso te falar é: " + response.mensagem);
+			}
+  			
+  		})
+  		.error(function(data, status, headers, config) {
+	  	    alert("É uma pena, mas um erro ocorreu... e foi na hora de buscar um tal de Jason");
+	  	});
+}
+
+function imovelCarouselControler($scope,$http) {
+	$http.get("http://localhost:7070/jersey/rest/imovel/carousel")
+	.success(function(response) {
+		$scope.tipo = response.tipo;
+		$scope.imoveis = response.dado;
+		$scope.mensagem = response.mensagem;
+		
+		if (response.tipo == "erro"){
+			alert("É uma pena, mas um erro ocorreu... e a única coisa que posso te falar é: " + response.mensagem);
+		}
+		
+	})
+	.error(function(data, status, headers, config) {
+		alert("É uma pena, mas um erro ocorreu... e foi na hora de buscar um tal de Jason");
+	});
 }
