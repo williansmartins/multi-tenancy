@@ -120,19 +120,19 @@ public class ImovelTest {
 		Assert.assertNotNull( entityBanco2 );
 		
 		//Teste passa porque existe
-		lista = dao.find(Tipo.APARTAMENTO, "cotia", new BigDecimal(120000), new BigDecimal(160000));
-		Assert.assertTrue( lista.size() > 0 );
+		lista = dao.find(Tipo.APARTAMENTO, "cotia", new BigDecimal(120000), new BigDecimal(220000));
+		Assert.assertTrue( lista != null && lista.size() > 0 );
 		
 		//Teste passa raspando no preco
 		lista = dao.find(Tipo.APARTAMENTO, "cotia", new BigDecimal(150000), new BigDecimal(150000));
-		Assert.assertTrue( lista.size() > 0 );
+		Assert.assertTrue(  lista!= null && lista.size() > 0 );
 		
 		//Testa falha por tipo 
-		lista = dao.find(Tipo.CASA, "cotia", new BigDecimal(120000), new BigDecimal(160000) );
+		lista = dao.find(Tipo.CASA, "cotia", new BigDecimal(120000), new BigDecimal(220000) );
 		Assert.assertNull( lista );
 		
 		//Testa falha por cidade 
-		lista = dao.find(Tipo.APARTAMENTO, "jaguariuna", new BigDecimal(120000), new BigDecimal(160000) );
+		lista = dao.find(Tipo.APARTAMENTO, "jaguariuna", new BigDecimal(120000), new BigDecimal(220000) );
 		Assert.assertNull( lista );
 		
 		//Testa falha por preco
@@ -141,35 +141,35 @@ public class ImovelTest {
 		
 		//Testa passa com cidade nulla
 		lista = dao.find(Tipo.APARTAMENTO, "", new BigDecimal(120000), new BigDecimal(150000) );
-		Assert.assertTrue( lista.size() > 0 );
+		Assert.assertTrue(  lista!= null && lista.size() > 0 );
 		
 		//Testa passa com cidade nulla
 		lista = dao.find(Tipo.APARTAMENTO, null, new BigDecimal(120000), new BigDecimal(150000) );
-		Assert.assertTrue( lista.size() > 0 );
+		Assert.assertTrue(  lista!= null && lista.size() > 0 );
 		
 		//Testa passa com tipo nulla
 		lista = dao.find( null, "cotia", new BigDecimal(120000), new BigDecimal(150000) );
-		Assert.assertTrue( lista.size() > 0 );
+		Assert.assertTrue(  lista!= null && lista.size() > 0 );
 		
 		//Testa passa com tipo e cidade forem null
 		lista = dao.find( null, null, new BigDecimal(120000), new BigDecimal(150000) );
-		Assert.assertTrue( lista.size() > 0 );
+		Assert.assertTrue(  lista!= null && lista.size() > 0 );
 		
 		//Testa se passa com somente tipo
 		lista = dao.find( Tipo.APARTAMENTO, null, null, null );
-		Assert.assertTrue( lista.size() > 0 );
+		Assert.assertTrue(  lista!= null && lista.size() > 0 );
 		
 		//Testa se passa com somente cidade
 		lista = dao.find( null, "cotia", null, null );
-		Assert.assertTrue( lista.size() > 0 );
+		Assert.assertTrue(  lista!= null && lista.size() > 0 );
 		
 		//Testa se passa com somente max
 		lista = dao.find( null, null, new BigDecimal(200000), null );
-		Assert.assertTrue( lista.size() > 0 );
+		Assert.assertTrue(  lista!= null && lista.size() > 0 );
 		
 		//Testa se passa com somente mmin
 		lista = dao.find( null, null, null, new BigDecimal(200000) );
-		Assert.assertTrue( lista.size() > 0 );
+		Assert.assertTrue(  lista!= null && lista.size() > 0 );
 		
 		
 		//Testar se removeu a entidade	

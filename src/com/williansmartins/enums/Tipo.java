@@ -1,5 +1,8 @@
 package com.williansmartins.enums;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public enum Tipo {
 	APARTAMENTO("Apartamento"), CASA("Casa"), QUALQUER("Qualquer"), SALA_COMERCIAL("Sala comercial"), TERRENO("Terreno");
 	
@@ -21,6 +24,14 @@ public enum Tipo {
 			}
 		}
 		return retorno;
+	}
+	
+	public static List<String> getLabels(){
+		List<String> lista = new ArrayList<String>();
+		for (Tipo t : Tipo.values()) {
+			lista.add( t.getLabel() );
+		}
+		return lista;
 	}
 	
 	@Override

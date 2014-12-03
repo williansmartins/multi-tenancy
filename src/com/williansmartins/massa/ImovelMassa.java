@@ -70,8 +70,8 @@ public class ImovelMassa {
 		entity.setCidade("Jandira");
 		entity.setTitulo("Grande Família");
 		entity.setDescricaoCompleta("Um terreno muito grande, com 3 casas construídas, a primeira casa é a principal com 130 m², as outras 2 possuem 54 m². A localização é ótima, ao lado de Minimercado, próximo à estação de trem, padarias, possui uma escola no mesmo quarteirão, uma visão totalmente panorâmica da área chamada de Chácara dos Padres. Possui 2 vagas de garagem, escritório e banheiro reservado na primeira casa, um jardim lindo, com plantas, árvores frutíferas, hortas de legumes. Uma ampla varanda com mais de 20 m², uma área  para festas, balanço para crianças e muito mais.");
-		entity.setDescricaoCarousel("3 casas em uma só, próximo de mercado, estação de trem, padarias, escola no mesmo quarteirão, 2 vagas, jardim, escritório e varanda.");
 		entity.setDescricaoQuadrante("Um terreno grande, com 3 casas construídas, a primeira é a principal com 130 m², as outras com 54 m². Próximo de mercado, estação de trem, padarias, escola no mesmo quarteirão, 2 vagas, jardim e varanda.");
+		entity.setDescricaoCarousel("3 casas em uma só, próximo de mercado, estação de trem, padarias, escola no mesmo quarteirão, 2 vagas, jardim, escritório e varanda.");
 		entity.setDormitorios(2);
 		entity.setEndereco("Maria Aparecida Pedrosa, 47, Sagrado Coração, Jandira");
 		entity.setFita(Fita.OBRAS);
@@ -103,10 +103,10 @@ public class ImovelMassa {
 		ImovelEntity entity = new ImovelEntity();
 		entity.setCidade("Rio de Janeiro");
 		entity.setTitulo("Casa em Ipanema");
-		entity.setDescricaoCompleta("Um terreno muito grande, com 3 casas construídas, a primeira casa é a principal com 130 m², as outras 2 possuem 54 m². A localização é ótima, ao lado de Minimercado, próximo à estação de trem, padarias, possui uma escola no mesmo quarteirão, uma visão totalmente panorâmica da área chamada de Chácara dos Padres. Possui 2 vagas de garagem, escritório e banheiro reservado na primeira casa, um jardim lindo, com plantas, árvores frutíferas, hortas de legumes. Uma ampla varanda com mais de 20 m², uma área  para festas, balanço para crianças e muito mais.");
-		entity.setDescricaoCarousel("3 casas em uma só, próximo de mercado, estação de trem, padarias, escola no mesmo quarteirão, 2 vagas, jardim, escritório e varanda.");
-		entity.setDescricaoQuadrante("Um terreno grande, com 3 casas construídas, a primeira é a principal com 130 m², as outras com 54 m². Próximo de mercado, estação de trem, padarias, escola no mesmo quarteirão, 2 vagas, jardim e varanda.");
-		entity.setDormitorios(2);
+		entity.setDescricaoCompleta("Excelente casa implantada em de belo terreno de 1450 m², que divide-se em dois grandes platôs, com generoso espaço de jardim gramado, vista panorâmica para verde e montanha. 1º Nível: Salão em vários ambientes com portas de vidro que promovem muita luz natural ao ambiente e integram ao jardim, jantar, lavabo, varanda com espaço gourmet e churrasqueira, gramado e bela piscina, cozinha com armários, despensa e louçaria, lavanderia, dependência de empregada, apartamento de caseiro, canil. 2º Nível: Sala íntima e ");
+		entity.setDescricaoQuadrante("Esta magnífica residência de 5 suites, possui tudo que se poderia esperar de um imóvel de luxo: uma vista espetacular, sofisticação, confort, segurança e privacidade. O fabuloso Living tem vistas");
+		entity.setDescricaoCarousel("Esta magnífica residência de 5 suites, possui tudo que se poderia esperar de um imóvel de luxo: uma vista espetacular, sofisticação");
+		entity.setDormitorios(5);
 		entity.setEndereco("Maria Aparecida Pedrosa, 47, Sagrado Coração, Jandira");
 		entity.setFita(Fita.PRE);
 		entity.setMaps("https://www.google.com/maps/embed?pb=!1m20!1m8!1m3!1d1829.4916250485917!2d-46.8514345!3d-23.4971128!3m2!1i1024!2i768!4f13.1!4m9!1i0!3e6!4m0!4m5!1s0x94cf023b1a960943%3A0xc7c573393bf1f502!2sAlphaville+Comercial%2C+Barueri+-+SP!3m2!1d-23.4970209!2d-46.851323699999995!5e0!3m2!1spt-PT!2sbr!4v1412624406079");
@@ -142,11 +142,11 @@ public class ImovelMassa {
 		ImovelEntity entity = new ImovelEntity();
 		entity.setCidade("Barueri");
 		entity.setTitulo("Bela Vista");
-		entity.setDescricaoCompleta("Um terreno muito grande, com 3 casas construídas, a primeira casa é a principal com 130 m², as outras 2 possuem 54 m². A localização é ótima, ao lado de Minimercado, próximo à estação de trem, padarias, possui uma escola no mesmo quarteirão, uma visão totalmente panorâmica da área chamada de Chácara dos Padres. Possui 2 vagas de garagem, escritório e banheiro reservado na primeira casa, um jardim lindo, com plantas, árvores frutíferas, hortas de legumes. Uma ampla varanda com mais de 20 m², uma área  para festas, balanço para crianças e muito mais.");
-		entity.setDescricaoCarousel("3 casas em uma só, próximo de mercado, estação de trem, padarias, escola no mesmo quarteirão, 2 vagas, jardim, escritório e varanda.");
-		entity.setDescricaoQuadrante("Um terreno grande, com 3 casas construídas, a primeira é a principal com 130 m², as outras com 54 m². Próximo de mercado, estação de trem, padarias, escola no mesmo quarteirão, 2 vagas, jardim e varanda.");
+		entity.setDescricaoCompleta("Linda casa com 5 suítes(sendo a master com banheiro senhor e senhora e ampla varanda), garagem coberta no subsolo com 5 vagas cobertas, 980 m² de área útil e 710 m² de área total, além de vista eterna para a Reserva Florestal(Área de Preservação), excelente acabamento em mármore(Pigues ou Crema Marfil), persianas elétricas e com telas para mosquitos, home theater,, escritório, cozinha com ilha ampla área externa com piscina ensolarada com prainha, sauna, espaço gourmet com churrasqueira, dependencia de empregados, ampla despensa com");
+		entity.setDescricaoQuadrante("Linda casa com 5 suítes(sendo a master com banheiro senhor e senhora e ampla varanda), garagem coberta no subsolo com 5 vagas cobertas, 980 m² de área útil e 710 m² de área total, além de vista eterna");
+		entity.setDescricaoCarousel("Linda casa com 5 suítes(sendo a master com banheiro senhor e senhora e ampla varanda), garagem coberta no subsolo com 5 vagas cobertas");
 		entity.setDormitorios(2);
-		entity.setEndereco("Maria Aparecida Pedrosa, 47, Sagrado Coração, Jandira");
+		entity.setEndereco("Alphaville, barueri, rua 11");
 		entity.setFita(Fita.PRONTO);
 		entity.setMaps("https://www.google.com/maps/embed?pb=!1m20!1m8!1m3!1d1829.4916250485917!2d-46.8514345!3d-23.4971128!3m2!1i1024!2i768!4f13.1!4m9!1i0!3e6!4m0!4m5!1s0x94cf023b1a960943%3A0xc7c573393bf1f502!2sAlphaville+Comercial%2C+Barueri+-+SP!3m2!1d-23.4970209!2d-46.851323699999995!5e0!3m2!1spt-PT!2sbr!4v1412624406079");
 		entity.setMetros(500);
@@ -179,6 +179,7 @@ public class ImovelMassa {
 		entity.setTemValor(false);
 		entity.setSuites(2);
 		entity.setBanheiros(4);
+		entity.setValor(new BigDecimal("150000"));
 		return entity;
 	}
 
