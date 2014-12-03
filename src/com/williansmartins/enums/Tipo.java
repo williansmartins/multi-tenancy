@@ -19,7 +19,7 @@ public enum Tipo {
 	public static Tipo get(String tipo){
 		Tipo retorno = null;
 		for (Tipo t : Tipo.values()) {
-			if( t.getLabel() == tipo ){
+			if( t.getLabel().toLowerCase().equalsIgnoreCase( tipo.toLowerCase() ) ){
 				retorno = t;
 			}
 		}
